@@ -72,19 +72,28 @@ h1 {
 }
 
 p {
-    width: 100%;
+    max-width: 100%;
     line-height: 1.5;
     font-size: 1.1rem;   /* Default size */
     white-space: normal; /* Allows wrapping ONLY if the screen is tiny */
 }
 
+/* Default style (Laptop/Desktop) */
+.responsive-text {
+    width: 100%;
+    text-align: center;
+    white-space: nowrap; /* Forces one single line on laptop */
+    font-size: 1.1rem;
+    margin: 15px 0;
+}
+
+/* Mobile style (Phones) */
 @media (max-width: 480px) {
-    p {
-        font-size: 0.9rem; /* Shrinks text slightly so it fits in one line on phones */
-        padding: 0 10px;
-    }
-    
-    h1 {
-        font-size: 1.5rem; /* Prevents the heading from being too huge */
+    .responsive-text {
+        white-space: normal; /* Allows the text to wrap */
+        max-width: 250px;     /* Squeezes the width to force ~4 lines */
+        margin: 15px auto;    /* Centers the squeezed box */
+        line-height: 1.4;     /* Improves readability when wrapped */
+        font-size: 1rem;      /* Slightly smaller to fit better */
     }
 }
