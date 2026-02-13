@@ -13,8 +13,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f7d1d1; /* A slightly softer pink */
+  background-color: #f7d1d1;
   color: #333;
+  overflow-x: hidden; /* Prevents horizontal scroll on small screens */
 }
 
 /* 3. Main Content Container */
@@ -24,11 +25,10 @@ body {
   text-align: center;
   align-items: center;
   gap: 20px;
-  width: 90;
-  max-width: 500px;
-  margin: 20px;
-  padding: 20px;
+  width: 90%; /* Fixed the missing % sign */
+  max-width: 800px; /* Increased to 800px so H1 stays on one line on laptop */
   margin: 20px auto;
+  padding: 20px;
 }
 
 /* 4. Image/GIF Styling */
@@ -41,8 +41,9 @@ body {
 
 /* 5. Heading Styling */
 h1 {
-  font-size: 2rem;
-  color: #d10056; /* Deep pink color */
+  font-size: 2.2rem;
+  color: #d10056;
+  white-space: nowrap; /* Forces "Please consider..." to stay on one line on laptop */
 }
 
 /* 6. Button Grouping */
@@ -56,7 +57,7 @@ h1 {
 .btn a {
   text-decoration: none;
   color: #fff;
-  background: #ff69b4; /* Hot pink buttons */
+  background: #ff69b4;
   padding: 12px 30px;
   border-radius: 50px;
   font-weight: bold;
@@ -67,33 +68,37 @@ h1 {
 /* 8. Button Hover Effect */
 .btn a:hover {
   background: #ff1493;
-  transform: scale(1.1); /* Slightly grows the button when hovered */
+  transform: scale(1.1);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-p {
-    max-width: 100%;
-    line-height: 1.5;
-    font-size: 1.1rem;   /* Default size */
-    white-space: normal; /* Allows wrapping ONLY if the screen is tiny */
-}
-
-/* Default style (Laptop/Desktop) */
+/* 9. Paragraph Styling (Laptop) */
 .responsive-text {
     width: 100%;
     text-align: center;
-    white-space: nowrap; /* Forces one single line on laptop */
+    white-space: nowrap; /* Stays in one line on laptop */
+    line-height: 1.5;
     font-size: 1.1rem;
     margin: 15px 0;
 }
 
-/* Mobile style (Phones) */
+/* 10. Mobile Viewports (Phones) */
 @media (max-width: 480px) {
+    h1 {
+        white-space: normal; /* Allows heading to wrap on very small phones if necessary */
+        font-size: 1.7rem;
+    }
+
     .responsive-text {
         white-space: normal; /* Allows the text to wrap */
-        max-width: 250px;     /* Squeezes the width to force ~4 lines */
-        margin: 15px auto;    /* Centers the squeezed box */
-        line-height: 1.4;     /* Improves readability when wrapped */
-        font-size: 1rem;      /* Slightly smaller to fit better */
+        max-width: 280px;     /* Squeezes the text to force ~4 lines as requested */
+        margin: 15px auto;
+        line-height: 1.4;
+        font-size: 1rem;
+    }
+
+    .container .btn {
+        flex-direction: row; /* Keeps buttons side-by-side on mobile */
+        gap: 15px;
     }
 }
