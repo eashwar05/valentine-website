@@ -1,0 +1,70 @@
+/* 1. Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 2. Body Layout - Centers everything on screen */
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7d1d1; /* A slightly softer pink */
+  color: #333;
+}
+
+/* 3. Main Content Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  gap: 20px;
+  max-width: 500px;
+  margin: 20px;
+  padding: 20px;
+}
+
+/* 4. Image/GIF Styling */
+.container img {
+  max-width: 300px;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 5. Heading Styling */
+h1 {
+  font-size: 2rem;
+  color: #d10056; /* Deep pink color */
+}
+
+/* 6. Button Grouping */
+.container .btn {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+/* 7. Button Styling */
+.btn a {
+  text-decoration: none;
+  color: #fff;
+  background: #ff69b4; /* Hot pink buttons */
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* 8. Button Hover Effect */
+.btn a:hover {
+  background: #ff1493;
+  transform: scale(1.1); /* Slightly grows the button when hovered */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
